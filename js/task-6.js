@@ -1,10 +1,11 @@
-const btnCreate = document.querySelector("button[data-create]")
-const btnDelete = document.querySelector("button[data-destroy]")
-const inputValue = document.querySelector("input")
-let boxesForElements = document.querySelector("div#boxes")
+const btnCreate = document.querySelector("button[data-create]");
+const btnDelete = document.querySelector("button[data-destroy]");
+const numberInput = document.querySelector("input");
+let boxesForElements = document.querySelector("div#boxes");
 
 
 function createBoxes(amount) {
+  deleteBoxes();
   if (amount >= 1 && amount <= 100) {
     let size = 30;
     for (let i = 1; i <= amount; i++){
@@ -23,8 +24,8 @@ function deleteBoxes() {
 }
 
 btnCreate.addEventListener("click", () => {
-  createBoxes(inputValue.valueAsNumber);
-  inputValue.value = "";
+  createBoxes(numberInput.valueAsNumber);
+  numberInput.value = "";
 }); 
 
 btnDelete.addEventListener("click", () => {

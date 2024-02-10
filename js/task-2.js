@@ -28,13 +28,14 @@ const images = [
   },
 ];
 
-
-for (let i = 0; i < images.length; i += 1){
-  let gallery = document.querySelector(".gallery")
-  const listItem = document.createElement("li")
-  const galeryImages = document.createElement("img");
-  galeryImages.src = images[i].url;
-  galeryImages.alt = images[i].alt;
-  listItem.append(galeryImages)
-  gallery.append(listItem)
-}
+let gallery = document.querySelector(".gallery");
+let list = [];
+images.forEach(function(i) {
+  const listItem = document.createElement("li");
+  const galleryImage = document.createElement("img");
+  galleryImage.src = i.url;
+  galleryImage.alt = i.alt;
+  listItem.append(galleryImage);
+  list.push(listItem);
+});
+gallery.append(...list);

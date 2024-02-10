@@ -1,10 +1,10 @@
-const list = document.querySelector("ul#categories")
-const categories = list.children
+const categoryItemElements = document.querySelector("ul#categories")
+const categories = categoryItemElements.children
 console.log(categories.length)
 
-for (let i = 0; i < categories.length; i+=1) {
-    const list = categories[i].children
+Array.from(categories).forEach(element => {
+    const list = element.children
     const countOfEachCategory = list[1].children.length
-    console.log(list[0].innerHTML)
+    console.log(list[0].textContent)
     console.log(countOfEachCategory)
-};
+}); 
